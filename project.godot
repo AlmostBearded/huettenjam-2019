@@ -8,9 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Card",
+"language": "GDScript",
+"path": "res://scripts/card.gd"
+}, {
+"base": "Reference",
+"class": "Pool",
+"language": "GDScript",
+"path": "res://scripts/pool.gd"
+} ]
 _global_script_class_icons={
-
+"Card": "",
+"Pool": ""
 }
 
 [application]
@@ -18,6 +29,10 @@ _global_script_class_icons={
 config/name="huettenjam"
 run/main_scene="res://game.tscn"
 config/icon="res://icon.png"
+
+[debug]
+
+settings/stdout/print_fps=true
 
 [display]
 
