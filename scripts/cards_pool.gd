@@ -2,6 +2,8 @@ extends Node2D
 
 var pool
 var n_stats = 3
+
+var curr_card = null
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,6 +20,21 @@ func _ready():
 		var c = build_card(csv, stats)
 		pool.insert(c)
 	file.close()
+	
+	curr_card = draw_card(str(1))
+	
+func _process(delta):
+	var accepted = -1
+	if Input.is_action_pressed("accept_p1"):
+		accepted = 1
+	if Input.is_action_pressed("reject_p1"):
+		accepted = 0
+	if(accepted > -1):
+		var new_card = select_next(curr_card, true if accepted == 1 else false)
+		if(curr_card.is_general()):
+			add_card(curr_card)
+		curr_card = new_card
+	
 
 func draw_card(id):
 	return pool.pull(id)
