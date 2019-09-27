@@ -20,7 +20,10 @@ size_flags_horizontal = 3
 stretch = true
 
 [node name="Splitscreen" parent="viewports/container1" instance=ExtResource( 1 )]
-rect_scale = Vector2( 0.53, 0.553 )
+margin_top = -3.0
+margin_right = 640.0
+margin_bottom = 1077.0
+rect_scale = Vector2( 0.53, 0.556 )
 
 [node name="container2" type="ViewportContainer" parent="viewports"]
 margin_left = 342.0
@@ -30,8 +33,10 @@ size_flags_horizontal = 3
 stretch = true
 
 [node name="Splitscreen2" parent="viewports/container2" instance=ExtResource( 1 )]
+margin_top = -3.0
 margin_right = 640.0
-rect_scale = Vector2( 0.53, 0.553 )
+margin_bottom = 1077.0
+rect_scale = Vector2( 0.53, 0.556 )
 id = 2
 
 [node name="container3" type="ViewportContainer" parent="viewports"]
@@ -42,8 +47,10 @@ size_flags_horizontal = 3
 stretch = true
 
 [node name="Splitscreen3" parent="viewports/container3" instance=ExtResource( 1 )]
+margin_top = -3.0
 margin_right = 640.0
-rect_scale = Vector2( 0.53, 0.553 )
+margin_bottom = 1077.0
+rect_scale = Vector2( 0.53, 0.556 )
 id = 3
 
 [node name="Camera2D" type="Camera2D" parent="viewports"]
