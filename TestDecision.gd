@@ -1,0 +1,26 @@
+extends Node
+
+var text
+var left_influence_status1
+var right_influence_status1
+var left_influence_status2
+var right_influence_status2
+var left_influence_status3
+var right_influence_status3
+var left_influence_status4
+var right_influence_status4
+var left_influence_status5
+var right_influence_status5
+
+func _init(_text, _left_influence_status1, _right_influence_status1, _left_influence_status2, _right_influence_status2, _left_influence_status3, _right_influence_status3, _left_influence_status4, _right_influence_status4, _left_influence_status5, _right_influence_status5):
+	text = _text
+	left_influence_status1 = _left_influence_status1
+	right_influence_status1 = _right_influence_status1
+	left_influence_status2 = _left_influence_status2
+	right_influence_status2 = _right_influence_status2
+	left_influence_status3 = _left_influence_status3
+	right_influence_status3 = _right_influence_status3
+	left_influence_status4 = _left_influence_status4
+	right_influence_status4 = _right_influence_status4
+	left_influence_status5 = _left_influence_status5
+	right_influence_status5 = _right_influence_status5
