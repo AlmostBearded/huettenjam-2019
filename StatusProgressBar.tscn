@@ -1,0 +1,21 @@
+[gd_scene format=2]
+
+[node name="Status" type="Panel"]
+margin_right = 120.0
+margin_bottom = 150.0
+
+[node name="Label" type="Label" parent="."]
+margin_top = 130.0
+margin_right = 120.0
+margin_bottom = 161.0
+text = "Employees"
+align = 1
+autowrap = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_top = 125.0
+margin_right = 120.0
+margin_bottom = 245.0
+rect_rotation = -90.0
+value = 50.0
+percent_visible = false

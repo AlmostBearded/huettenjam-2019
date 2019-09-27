@@ -1,0 +1,76 @@
+[gd_scene format=2]
+
+[node name="decision" type="Panel"]
+margin_right = 640.0
+margin_bottom = 1080.0
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 620.0
+margin_bottom = 670.0
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -600.0
+margin_top = -650.0
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 300.0
+margin_bottom = 325.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Here is an important decision. It is of outmost importance."
+autowrap = true
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 20.0
+margin_top = 690.0
+margin_right = 620.0
+margin_bottom = 780.0
+
+[node name="ColorRect" type="ColorRect" parent="Panel2"]
+margin_right = 600.0
+margin_bottom = 90.0
+
+[node name="ColorRect2" type="ColorRect" parent="Panel2"]
+margin_left = 295.0
+margin_right = 305.0
+margin_bottom = 90.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Panel2"]
+margin_left = 95.0
+margin_right = 195.0
+margin_bottom = 45.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="Label3" type="Label" parent="Panel2"]
+margin_right = 19.0
+margin_bottom = 18.0
+rect_scale = Vector2( 5, 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "<-"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="Panel2"]
+margin_left = 305.0
+margin_right = 405.0
+margin_bottom = 45.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="Label4" type="Label" parent="Panel2"]
+margin_left = 505.0
+margin_right = 524.0
+margin_bottom = 18.0
+rect_scale = Vector2( 5, 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "->"
+align = 1
+valign = 1
