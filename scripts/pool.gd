@@ -26,8 +26,8 @@ func select_succ(succ_list):
 		var random = randi() % 100
 		var possible_succ = []
 		for key in dict.keys():
-			if dict.is_general:
-				possible_succ.add(key)
+			if dict[key].is_general():
+				possible_succ.append(key)
 		return possible_succ[randi() % possible_succ.size()]
 	#just one successors
 	elif succ_list.size() == 1:
@@ -38,10 +38,10 @@ func select_succ(succ_list):
 		var range_start = 0
 		for key in succ_list.keys():
 			var range_end = succ_list[key]
-			if random >= range_start and random <= range_end:
+			if random >= range_start and random <= int(range_end):
 				return key
 			else:
-				range_start = range_end
+				range_start = int(range_end)
 		
 
 	
