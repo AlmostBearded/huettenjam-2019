@@ -1,4 +1,3 @@
-,,,,,,Positive Globals,,,,Negative Globals,,,,Positive HW/SW,,,Negative HW/SW,,,Positive Sales,,,Negative Sales,,,Positive Law,,,Negative Law,,,,
 Id,department,task,is_general,accept_opt,reject_opt,pos_stake,pos_custom,pos_env,pos_gov,neg_stake,neg_custom,neg_env,neg_gov,pos_dev_wf,pos_dev_mgmt,pos_dev_quality,neg_dev_wf,neg_dev_mgmt,neg_dev_quality,pos_sale_wf,pos_sale_mgmt,pos_sale_nocu,neg_sale_wf,neg_sale_mgmt,neg_sale_nocu,pos_law_wf,pos_law_mgmt,pos_law_tho,neg_law_wf,neg_law_mgmt,neg_law_tho,pos_succ,neg_succ
 1,SW/HW,Introduce pair programming,TRUE,Do pair programming,Keep developers apart,-1,1,0,0,1,-1,0,0,1,0,1,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,"{2:50, 3:50}",{3:40}
 2,SW/HW,Personal hygiene problems surface during pair programming sessions,FALSE,Mandatory showers,"Ignore, offer breathing masks",1,0,1,0,-1,0,0,0,-1,1,0,1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,{3:50},{3:30}
