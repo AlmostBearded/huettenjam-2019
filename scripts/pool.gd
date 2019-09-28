@@ -24,7 +24,6 @@ func select_succ(card, answer):
 	var succ_list = card.get_successors(answer)
 	if(size == 0):
 		return -1
-	randomize()
 	#if no successors get one of the general ones at random
 	if succ_list.empty():
 		return get_general_card()
@@ -56,7 +55,7 @@ func select_succ(card, answer):
 		
 
 func get_general_card():
-	var random = randi() % 100
+	randomize()
 	var possible_succ = []
 	for key in dict.keys():
 		if dict[key].is_general():
