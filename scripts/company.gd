@@ -12,7 +12,7 @@ var government setget set_government, get_government
 var departments = {}
 var DEPARTMENT_CLASS = load("res://scripts/department_instance.gd")
 
-const MAX_VAL = 5
+const MAX_VAL = 10
 
 # accessors
 func set_stakeholders(value):
@@ -50,6 +50,9 @@ func update_stats(gov, env, cust, stak, dep_stats):
 	
 	for dep_ids in departments.keys():
 		departments[dep_ids].update_stats(dep_stats[dep_ids])
+	
+	print_debug("stakeholders: %f\ncustomers: %f\nenvironment: %f\ngovernment: %f" %
+			[stakeholders, customers, environment, government])
 	
 	if government <= 0 || environment <= 0 || customers <= 0 || stakeholders <= 0:
 		emit_signal("game_over")
