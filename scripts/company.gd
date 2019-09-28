@@ -40,10 +40,10 @@ func check_status():
 	return government > 0 and environment > 0 and customers > 0 and stakeholders > 0
 
 func update_stats(gov, env, cust, stak, dep_stats):
-	government += float(gov) / MAX_VAL
-	environment += float(env) / MAX_VAL
-	customers += float(cust) / MAX_VAL
-	stakeholders += float(stak) / MAX_VAL
+	government = clamp(government + float(gov) / MAX_VAL, 0, 1)
+	environment = clamp(environment + float(env) / MAX_VAL, 0, 1)
+	customers = clamp(customers + float(cust) / MAX_VAL, 0, 1)
+	stakeholders = clamp(stakeholders + float(stak) / MAX_VAL, 0, 1)
 	
 	for dep_ids in departments.keys():
 		departments[dep_ids].update_stats(dep_stats[dep_ids])

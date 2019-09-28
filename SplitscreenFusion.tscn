@@ -50,7 +50,6 @@ func _on_department_review_done():
 script = SubResource( 1 )
 
 [node name="viewports" type="HBoxContainer" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 960.0

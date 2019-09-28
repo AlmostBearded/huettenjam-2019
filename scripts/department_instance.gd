@@ -58,7 +58,7 @@ func get_input():
 			choice = NEUTRAL
 			reset_indicators_ui()
 		else:
-			text.text = str(curr_card.id) + ". " + curr_card.task
+			text.text = "DILEMMA: " + curr_card.task
 			choice = NEUTRAL	
 			reset_indicators_ui()
 	if Input.is_action_just_pressed("reject_p%s" %id):
@@ -72,7 +72,7 @@ func get_input():
 			choice = NEUTRAL
 			reset_indicators_ui()
 		else:
-			text.text = "DILEMMA. " + curr_card.task
+			text.text = "DILEMMA: " + curr_card.task
 			choice = NEUTRAL	
 			reset_indicators_ui()
 			

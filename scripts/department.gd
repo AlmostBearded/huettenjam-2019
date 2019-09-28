@@ -37,17 +37,17 @@ func get_score():
 	return score
 
 func get_all_stats():
-	return [managers,workers,custom]
+	return [workers,managers,custom]
 
 func simulate_update(deltas):
-	return [managers + float(deltas[0]) / Company.MAX_VAL, 
-			workers + float(deltas[1]) / Company.MAX_VAL,
+	return [workers + float(deltas[1]) / Company.MAX_VAL,
+			managers + float(deltas[0]) / Company.MAX_VAL, 
 			custom + float(deltas[2]) / Company.MAX_VAL]
 	
 func update_stats(deltas):
-	managers += float(deltas[0]) / Company.MAX_VAL
-	workers += float(deltas[1]) / Company.MAX_VAL
-	custom += float(deltas[2]) / Company.MAX_VAL
+	managers = clamp(managers + float(deltas[0]) / Company.MAX_VAL, 0, 1)
+	workers = clamp(workers + float(deltas[1]) / Company.MAX_VAL, 0, 1)
+	custom = clamp(custom + float(deltas[2]) / Company.MAX_VAL, 0, 1)
 	
 	#TODO: update personal score
 	score += 0
