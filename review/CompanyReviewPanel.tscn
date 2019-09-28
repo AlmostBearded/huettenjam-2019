@@ -1,0 +1,186 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://fonts/m5x7_header.tres" type="DynamicFont" id=1]
+[ext_resource path="res://images/logo3pixelart.png" type="Texture" id=2]
+[ext_resource path="res://fonts/m5x7.tres" type="DynamicFont" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Label
+
+var last_value : float = 0.5
+
+func _enter_tree():
+	text = str(int(last_value * 100), \" -> \", int(Company.stakeholders * 100))
+
+func _exit_tree():
+	last_value = Company.stakeholders
+"
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Label
+
+var last_value : float = 0.5
+
+func _enter_tree():
+	text = str(int(last_value * 100), \" -> \", int(Company.customers * 100))
+
+func _exit_tree():
+	last_value = Company.customers"
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Label
+
+var last_value : float = 0.5
+
+func _enter_tree():
+	text = str(int(last_value * 100), \" -> \", int(Company.environment * 100))
+
+func _exit_tree():
+	last_value = Company.environment
+"
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Label
+
+var last_value : float = 0.5
+
+func _enter_tree():
+	text = str(int(last_value * 100), \" -> \", int(Company.government * 100))
+
+func _exit_tree():
+	last_value = Company.government"
+
+[node name="CompanyReviewPanel" type="PanelContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -150.0
+margin_right = 24.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 393.0
+margin_bottom = 231.0
+size_flags_vertical = 4
+custom_constants/separation = 22
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 386.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 1 )
+text = "Review"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 54.0
+margin_right = 386.0
+margin_bottom = 170.0
+custom_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+margin_right = 122.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 6
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 142.0
+margin_right = 386.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/CenterContainer"]
+editor/display_folded = true
+margin_left = 3.0
+margin_right = 241.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer"]
+editor/display_folded = true
+margin_right = 238.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+columns = 2
+
+[node name="StakeholdersLabel" type="Label" parent="VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
+margin_right = 146.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 3 )
+text = "Stakeholders: "
+
+[node name="StakeholdersValue" type="Label" parent="VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 150.0
+margin_right = 238.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 3 )
+text = "50 -> 33"
+script = SubResource( 1 )
+
+[node name="CustomersLabel" type="Label" parent="VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
+margin_top = 30.0
+margin_right = 146.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 3 )
+text = "Customers:"
+
+[node name="CustomersValue" type="Label" parent="VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 150.0
+margin_top = 30.0
+margin_right = 238.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 3 )
+text = "50 -> 71"
+script = SubResource( 2 )
+
+[node name="EnvironmentLabel" type="Label" parent="VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
+margin_top = 60.0
+margin_right = 146.0
+margin_bottom = 86.0
+custom_fonts/font = ExtResource( 3 )
+text = "Environment:"
+
+[node name="EnvironmentValue" type="Label" parent="VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 150.0
+margin_top = 60.0
+margin_right = 238.0
+margin_bottom = 86.0
+custom_fonts/font = ExtResource( 3 )
+text = "50 -> 62"
+script = SubResource( 3 )
+
+[node name="GovernmentLabel" type="Label" parent="VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
+margin_top = 90.0
+margin_right = 146.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 3 )
+text = "Government:"
+
+[node name="GovernmentValue" type="Label" parent="VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 150.0
+margin_top = 90.0
+margin_right = 238.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 3 )
+text = "50 -> 52"
+script = SubResource( 4 )
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 192.0
+margin_right = 386.0
+margin_bottom = 224.0
+custom_fonts/font = ExtResource( 3 )
+text = "Next"

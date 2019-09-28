@@ -29,8 +29,8 @@ func initiate_department():
 	custom_stats_start_index = GlobalPools.n_c_stats #+ GlobalPools.index_offset 
 	custom_stats_start_index +=  (id - 1) * GlobalPools.n_d_stats
 	
-	my_status = [$Status, $Status2, $Status3]
-	my_status_labels = [$Status/Label, $Status2/Label, $Status3/Label]
+	my_status = [$StatusPanel/Status, $StatusPanel/Status2, $StatusPanel/Status3]
+	my_status_labels = [$StatusPanel/Status/Label, $StatusPanel/Status2/Label, $StatusPanel/Status3/Label]
 	
 	var stats = curr_card.positive_effects.keys()
 	var local_i = 0
@@ -129,6 +129,3 @@ func go_ahead(answer):
 		pool.insert(curr_card)
 	curr_card = new_card
 	text.text = "DILEMMA: " + curr_card.task		
-	
-	
-	

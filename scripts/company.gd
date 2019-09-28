@@ -79,5 +79,3 @@ func set_up_game():
 	for d in deps:
 		d.initiate_department()
 		departments[str(d.id)] = d
-
-
