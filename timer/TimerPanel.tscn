@@ -8,6 +8,12 @@ script/source = "extends PanelContainer
 
 signal timeout
 
+func _enter_tree():
+	$HBoxContainer/Timer.start()
+
+func _exit_tree():
+	$HBoxContainer/Timer.stop()
+
 func _ready():
 	$HBoxContainer/Timer.connect(\"timeout\", self, \"_on_timeout\")
 
@@ -54,6 +60,5 @@ custom_fonts/font = ExtResource( 2 )
 text = "02:00"
 
 [node name="Timer" type="Timer" parent="HBoxContainer"]
-wait_time = 120.0
+wait_time = 10.0
 one_shot = true
-autostart = true

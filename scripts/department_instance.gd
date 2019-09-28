@@ -129,3 +129,7 @@ func go_ahead(answer):
 		pool.insert(curr_card)
 	curr_card = new_card
 	text.text = "DILEMMA: " + curr_card.task		
+
+
+func _on_RoundTimer_timeout():
+	initiated = false

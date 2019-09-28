@@ -69,12 +69,13 @@ func get_stats_array():
 	
 	
 # lifecycle
-func set_up_game():
+func _init():
 	stakeholders = 0.5
 	customers = 0.5
 	environment = 0.5
 	government = 0.5
-	
+
+func set_up_game():
 	var deps = get_tree().get_nodes_in_group("DepartmentNode")
 	for d in deps:
 		d.initiate_department()

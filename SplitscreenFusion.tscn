@@ -1,27 +1,56 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://SplitscreenPart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://timer/TimerPanel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://review/CompanyReviewPanel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://review/DepartmentReviewPanel.tscn" type="PackedScene" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
+var companyReviewPanel
+var departmentReviewPanel
+var timerPanel
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	Company.set_up_game()
+	companyReviewPanel = $CanvasLayer/CompanyReviewPanel
+	departmentReviewPanel = $CanvasLayer/DepartmentReviewPanel
+	timerPanel = $CanvasLayer/TimerPanel
+	$CanvasLayer.remove_child(companyReviewPanel)
+	$CanvasLayer.remove_child(departmentReviewPanel)
+	$CanvasLayer/TimerPanel.connect(\"timeout\", self, \"_on_timeout\")
+	companyReviewPanel.connect(\"button_clicked\", self, \"_on_company_review_done\")
+	departmentReviewPanel.connect(\"button_clicked\", self, \"_on_department_review_done\")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_timeout():
+	$CanvasLayer.remove_child(timerPanel)
+	$viewports/container1/Splitscreen.initiated = false
+	$viewports/container2/Splitscreen2.initiated = false
+	$viewports/container3/Splitscreen.initiated = false
+	$CanvasLayer.add_child(companyReviewPanel)
+	
+
+func _on_company_review_done():
+	$CanvasLayer.remove_child(companyReviewPanel)
+	$CanvasLayer.add_child(departmentReviewPanel)
+	
+
+func _on_department_review_done():
+	$viewports/container1/Splitscreen.initiated = true
+	$viewports/container2/Splitscreen2.initiated = true
+	$viewports/container3/Splitscreen.initiated = true
+	$CanvasLayer.remove_child(departmentReviewPanel)
+	$CanvasLayer.add_child(timerPanel)
+
+
 "
 
 [node name="screen" type="Node2D"]
 script = SubResource( 1 )
 
 [node name="viewports" type="HBoxContainer" parent="."]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 960.0
@@ -78,3 +107,21 @@ department = "Law"
 [node name="Camera2D" type="Camera2D" parent="viewports"]
 position = Vector2( 511.136, 297.224 )
 current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TimerPanel" parent="CanvasLayer" instance=ExtResource( 2 )]
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_left = 50.0
+margin_top = 5.0
+margin_right = 51.0
+margin_bottom = 46.0
+
+[node name="CompanyReviewPanel" parent="CanvasLayer" instance=ExtResource( 3 )]
+margin_top = -119.0
+margin_right = 200.0
+margin_bottom = 119.0
+
+[node name="DepartmentReviewPanel" parent="CanvasLayer" instance=ExtResource( 4 )]
+[connection signal="timeout" from="CanvasLayer/TimerPanel" to="viewports/container1/Splitscreen" method="_on_RoundTimer_timeout"]

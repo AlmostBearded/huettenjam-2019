@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://fonts/m5x7_header.tres" type="DynamicFont" id=1]
 [ext_resource path="res://fonts/m5x7.tres" type="DynamicFont" id=2]
@@ -7,18 +7,30 @@
 [ext_resource path="res://images/man2.png" type="Texture" id=5]
 
 [sub_resource type="GDScript" id=1]
+script/source = "extends PanelContainer
+
+signal button_clicked
+
+func _ready():
+	$VBoxContainer/Button.connect(\"button_up\", self, \"_on_button_clicked\")
+
+func _on_button_clicked():
+	emit_signal(\"button_clicked\")"
+
+[sub_resource type="GDScript" id=2]
 script/source = "extends Label
 
 var last_value : float = 0.5
 
 func _enter_tree():
+	print_debug(Company.departments)
 	text = str(int(last_value * 100), \" -> \", int(Company.stakeholders * 100))
 
 func _exit_tree():
 	last_value = Company.stakeholders
 "
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=3]
 script/source = "extends Label
 
 var last_value : float = 0.5
@@ -29,7 +41,7 @@ func _enter_tree():
 func _exit_tree():
 	last_value = Company.customers"
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=4]
 script/source = "extends Label
 
 var last_value : float = 0.5
@@ -52,6 +64,7 @@ margin_right = 392.0
 margin_bottom = 255.0
 rect_min_size = Vector2( 500, 0 )
 size_flags_vertical = 4
+script = SubResource( 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 7.0
@@ -93,7 +106,6 @@ text = "Development Department"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/GridContainer/Development/VBoxContainer"]
-editor/display_folded = true
 margin_top = 46.0
 margin_right = 366.0
 margin_bottom = 132.0
@@ -141,7 +153,7 @@ margin_right = 264.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
 text = "50 -> 33"
-script = SubResource( 1 )
+script = SubResource( 2 )
 
 [node name="Workers" type="Label" parent="VBoxContainer/GridContainer/Development/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
 margin_top = 30.0
@@ -157,7 +169,7 @@ margin_right = 264.0
 margin_bottom = 56.0
 custom_fonts/font = ExtResource( 2 )
 text = "50 -> 71"
-script = SubResource( 2 )
+script = SubResource( 3 )
 
 [node name="ProductQuality" type="Label" parent="VBoxContainer/GridContainer/Development/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
 margin_top = 60.0
@@ -173,7 +185,7 @@ margin_right = 264.0
 margin_bottom = 86.0
 custom_fonts/font = ExtResource( 2 )
 text = "50 -> 62"
-script = SubResource( 3 )
+script = SubResource( 4 )
 
 [node name="Score" type="Label" parent="VBoxContainer/GridContainer/Development/VBoxContainer"]
 margin_top = 152.0
@@ -251,7 +263,7 @@ margin_right = 270.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
 text = "50 -> 33"
-script = SubResource( 1 )
+script = SubResource( 2 )
 
 [node name="Workers" type="Label" parent="VBoxContainer/GridContainer/Sales/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
 margin_top = 30.0
@@ -267,7 +279,7 @@ margin_right = 270.0
 margin_bottom = 56.0
 custom_fonts/font = ExtResource( 2 )
 text = "50 -> 71"
-script = SubResource( 2 )
+script = SubResource( 3 )
 
 [node name="ProductQuality" type="Label" parent="VBoxContainer/GridContainer/Sales/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
 margin_top = 60.0
@@ -283,7 +295,7 @@ margin_right = 270.0
 margin_bottom = 86.0
 custom_fonts/font = ExtResource( 2 )
 text = "50 -> 62"
-script = SubResource( 3 )
+script = SubResource( 4 )
 
 [node name="Score" type="Label" parent="VBoxContainer/GridContainer/Sales/VBoxContainer"]
 margin_top = 152.0
@@ -362,7 +374,7 @@ margin_right = 248.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
 text = "50 -> 33"
-script = SubResource( 1 )
+script = SubResource( 2 )
 
 [node name="Workers" type="Label" parent="VBoxContainer/GridContainer/Law/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
 margin_top = 30.0
@@ -378,7 +390,7 @@ margin_right = 248.0
 margin_bottom = 56.0
 custom_fonts/font = ExtResource( 2 )
 text = "50 -> 71"
-script = SubResource( 2 )
+script = SubResource( 3 )
 
 [node name="ProductQuality" type="Label" parent="VBoxContainer/GridContainer/Law/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
 margin_top = 60.0
@@ -394,7 +406,7 @@ margin_right = 248.0
 margin_bottom = 86.0
 custom_fonts/font = ExtResource( 2 )
 text = "50 -> 62"
-script = SubResource( 3 )
+script = SubResource( 4 )
 
 [node name="Score" type="Label" parent="VBoxContainer/GridContainer/Law/VBoxContainer"]
 margin_top = 152.0
