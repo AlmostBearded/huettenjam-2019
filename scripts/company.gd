@@ -38,11 +38,12 @@ func get_government():
 
 # lifecycle
 
-func _ready():
+func _init():
 	stakeholders = 0.5
 	customers = 0.5
 	environment = 0.5
 	government = 0.5
+	print_debug("company initialized")
 
 #func _process(delta):
 #	pass
