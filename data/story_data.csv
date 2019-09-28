@@ -21,7 +21,7 @@ Id,department,task,is_general,accept_opt,reject_opt,pos_stake,pos_custom,pos_env
 20,SW/HW,Created patented algorithm,TRUE,We have to secure our intelectual property,The advance of human knowledge is more important,1,0,0,1,-1,0,0,0,1,1,0,0,-1,0,0,0,0,0,0,0,1,1,1,-1,-1,0,,
 21,SW/HW,Steal open source code,TRUE,The code is there and does what we need. why not take it?,"No, we should pay the developers for their work",1,0,0,-1,-1,0,0,1,1,1,1,-1,-1,-1,0,0,0,0,0,0,-1,-1,0,1,1,0,,
 22,SW/HW,Open source library,TRUE,We shall share our advances and leverage the community,"No, we worked hard on this so it is ours",0,0,0,0,0,0,0,0,1,-1,1,0,1,0,0,0,1,0,0,-1,1,-1,1,-1,1,1,,
-23,SW/HW,Don't care about customer data security,TRUE,It speeds up development and who is going to hack us,We have to take this responsibility seriously,2,-1,0,-1,-2,1,0,1,1,1,-1,-1,-1,1,-1,0,-1,1,0,1,-1,-1,-1,1,1,1,{26:70},
+23,SW/HW,Don't care about customer data security,TRUE,It speeds up development and who is going to hack us,We have to take this responsibility seriously,2,-1,0,-1,-2,1,0,1,1,1,-1,-1,-1,1,-1,0,-1,1,0,1,-1,-1,-1,1,1,1,{24:70},
 24,SW/HW,Customers are complaining about data leak,FALSE,Create separate company to handle cleaning up the leak,Blame customers for creating sensitive data,1,-1,0,1,1,-1,0,-1,0,0,0,0,1,0,1,1,1,-1,1,-1,1,1,1,-1,1,1,,
 25,SW/HW,Switch to green energy,TRUE,"It is more expensive, but people demand it",Cheap is good!,-1,0,1,1,1,0,-1,-1,0,-1,0,0,1,0,0,1,1,0,-1,0,0,0,0,0,0,0,,
 26,Sales,Sell to Saudi Arabia,TRUE,"Yes, they pay real good money","No, we don't want to support quasi dictators",1,0,0,-1,-1,0,0,1,0,0,0,0,0,0,-1,1,1,1,-1,-1,-1,1,1,0,-1,0,{27:50},{28:50}
