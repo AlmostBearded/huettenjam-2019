@@ -21,9 +21,7 @@ size_flags_horizontal = 3
 stretch = true
 
 [node name="Splitscreen" parent="viewports/container1" instance=ExtResource( 1 )]
-margin_left = 32.0
 margin_top = 28.0
-margin_right = 352.0
 margin_bottom = 568.0
 
 [node name="container2" type="ViewportContainer" parent="viewports"]
