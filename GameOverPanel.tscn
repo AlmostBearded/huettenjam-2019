@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/m5x7_header.tres" type="DynamicFont" id=1]
+[ext_resource path="res://images/logo3pixelart.png" type="Texture" id=2]
+[ext_resource path="res://fonts/m5x7.tres" type="DynamicFont" id=3]
+
+[node name="GameOverPanel" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -594.0
+margin_bottom = -458.0
+rect_min_size = Vector2( 0, 150 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 359.0
+margin_bottom = 143.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 352.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 1 )
+text = "Game Over"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 36.0
+margin_right = 352.0
+margin_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_left = 36.0
+margin_top = 37.0
+margin_right = 352.0
+margin_bottom = 63.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Company dead. Everyone dead."

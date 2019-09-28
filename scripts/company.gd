@@ -1,5 +1,8 @@
 extends Node2D
 
+signal game_over
+
+
 # stats
 var stakeholders setget set_stakeholders, get_stakeholders
 var customers setget set_customers, get_customers
@@ -47,6 +50,9 @@ func update_stats(gov, env, cust, stak, dep_stats):
 	
 	for dep_ids in departments.keys():
 		departments[dep_ids].update_stats(dep_stats[dep_ids])
+	
+	if government <= 0 || environment <= 0 || customers <= 0 || stakeholders <= 0:
+		emit_signal("game_over")
 	
 	return check_status()
 
