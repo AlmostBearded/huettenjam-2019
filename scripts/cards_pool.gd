@@ -1,19 +1,21 @@
 extends Node2D
 
 var all_pools = {}
-var n_stats = 3
 
-var curr_card = null
-var the_end = false 
+var index_offset = 6
+var n_c_stats = 4
+var n_d_stats = 3
+var n_dep = 3
+var n_stats =  n_c_stats + (n_d_stats * n_dep)
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+
+func load_csv():
 	var file = File.new()
 	file.open("res://data/cards_pool.csv", file.READ)
+	file.get_csv_line ()
 	var header = file.get_csv_line ()
 	var stats = []
-	for i in range(6, 6+2*n_stats):
-		var temp = header[i]
+	for i in range(index_offset, index_offset+2*n_stats):
 		stats.append(header[i])
 	while !file.eof_reached():
 		var csv = file.get_csv_line()
@@ -38,26 +40,30 @@ func build_card(line, stats):
 	var acc = line[4]
 	var rej = line[5]
 	
+	#index 6-18
 	var pos_e = {}
+	#index 19-31
 	var neg_e = {}
 	
 	for stat in range(0,n_stats):
-		pos_e[stats[stat]] = line[6+stat]
+		pos_e[stats[stat]] = line[index_offset+stat]
 		
 	for stat in range(n_stats, 2*n_stats):
-		neg_e[stats[stat]] = line[6+stat]
+		neg_e[stats[stat]] = line[index_offset+stat]
 	
+	#index 32
 	var pos_s = {}
-	var succ = line[6+2*n_stats]
+	var succ = line[index_offset+2*n_stats]
 	if(succ.length() > 2):
 		succ = succ.substr(1,succ.length()-2)
 		for s in succ.rsplit(','):
 			var item = s.rsplit(':')
 			pos_s[item[0]] = item[1]
 	
+	#index 33
 	var neg_s = {}
 	if(succ.length() > 2):
-		succ = line[6+2*n_stats + 1]
+		succ = line[index_offset+2*n_stats + 1]
 		succ = succ.substr(1,succ.length()-2)
 		for s in succ.rsplit(','):
 			var item = s.rsplit(':')

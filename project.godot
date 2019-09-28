@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/card.gd"
 }, {
-"base": "Node2D",
+"base": "Panel",
 "class": "Department",
 "language": "GDScript",
 "path": "res://scripts/department.gd"
@@ -33,12 +33,12 @@ _global_script_class_icons={
 [application]
 
 config/name="huettenjam"
-run/main_scene="res://StartScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 GlobalPools="*res://scripts/cards_pool.gd"
+Company="*res://scripts/company.gd"
 
 [debug]
 
@@ -46,8 +46,6 @@ settings/stdout/print_fps=true
 
 [display]
 
-window/size/width=960
-window/size/height=540
 window/stretch/mode="viewport"
 
 [input]
