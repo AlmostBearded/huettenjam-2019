@@ -3,7 +3,7 @@
 [ext_resource path="res://StatusProgressBarTextured.tscn" type="PackedScene" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0, 0, 0, 1 )
+bg_color = Color( 0, 0, 0, 0 )
 
 [node name="StatusPanel" type="Panel"]
 margin_left = 4.0

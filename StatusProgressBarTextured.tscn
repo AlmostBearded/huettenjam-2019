@@ -2,32 +2,32 @@
 
 [ext_resource path="res://StatusProgressBar.gd" type="Script" id=1]
 [ext_resource path="res://fonts/m5x7.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://images/arrow_down1.png" type="Texture" id=3]
-[ext_resource path="res://images/arrow_down2.png" type="Texture" id=4]
-[ext_resource path="res://images/arrow_down3.png" type="Texture" id=5]
-[ext_resource path="res://images/arrow_up1.png" type="Texture" id=6]
-[ext_resource path="res://images/arrow_up2.png" type="Texture" id=7]
-[ext_resource path="res://images/arrow_up3.png" type="Texture" id=8]
+[ext_resource path="res://images/arrow_up1.png" type="Texture" id=3]
+[ext_resource path="res://images/arrow_up2.png" type="Texture" id=4]
+[ext_resource path="res://images/arrow_up3.png" type="Texture" id=5]
+[ext_resource path="res://images/arrow_down1.png" type="Texture" id=6]
+[ext_resource path="res://images/arrow_down2.png" type="Texture" id=7]
+[ext_resource path="res://images/arrow_down3.png" type="Texture" id=8]
 [ext_resource path="res://images/bar.png" type="Texture" id=9]
 [ext_resource path="res://images/bar_fill_color.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0, 0, 0, 1 )
+bg_color = Color( 0, 0, 0, 0 )
 
 [sub_resource type="DynamicFont" id=2]
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "arrowDown",
+"name": "arrowUp",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "arrowUp",
+"name": "arrowDown",
 "speed": 5.0
 } ]
 
@@ -42,13 +42,14 @@ margin_top = 80.0
 margin_right = 60.0
 margin_bottom = 131.0
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Employees"
 align = 1
 autowrap = true
 
 [node name="influence" type="AnimatedSprite" parent="."]
 position = Vector2( 30, 10 )
-frames = SubResource( 5 )
+frames = SubResource( 3 )
 animation = "arrowUp"
 frame = 2
 playing = true
