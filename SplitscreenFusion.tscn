@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://SplitscreenPart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://timer/TimerPanel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://review/CompanyReviewPanel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://review/DepartmentReviewPanel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://RankingPanel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GameOverPanel.tscn" type="PackedScene" id=6]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -11,17 +13,25 @@ script/source = "extends Node2D
 var companyReviewPanel
 var departmentReviewPanel
 var timerPanel
+var rankingPanel
+var gameOverPanel
 
 func _ready():
 	Company.set_up_game()
 	companyReviewPanel = $CanvasLayer/CompanyReviewPanel
 	departmentReviewPanel = $CanvasLayer/DepartmentReviewPanel
 	timerPanel = $CanvasLayer/TimerPanel
+	rankingPanel = $CanvasLayer/RankingPanel
+	gameOverPanel = $CanvasLayer/GameOverPanel
 	$CanvasLayer.remove_child(companyReviewPanel)
 	$CanvasLayer.remove_child(departmentReviewPanel)
+	$CanvasLayer.remove_child(rankingPanel)
+	$CanvasLayer.remove_child(gameOverPanel)
 	$CanvasLayer/TimerPanel.connect(\"timeout\", self, \"_on_timeout\")
 	companyReviewPanel.connect(\"button_clicked\", self, \"_on_company_review_done\")
 	departmentReviewPanel.connect(\"button_clicked\", self, \"_on_department_review_done\")
+	departmentReviewPanel.connect(\"game_ended\", self, \"_on_game_ended\")
+	Company.connect(\"game_over\", self, \"_on_game_over\")
 
 func _on_timeout():
 	$CanvasLayer.remove_child(timerPanel)
@@ -43,8 +53,13 @@ func _on_department_review_done():
 	$CanvasLayer.remove_child(departmentReviewPanel)
 	$CanvasLayer.add_child(timerPanel)
 
+func _on_game_ended():
+	$CanvasLayer.remove_child(departmentReviewPanel)
+	$CanvasLayer.add_child(rankingPanel)
 
-"
+func _on_game_over():
+	$CanvasLayer.remove_child(timerPanel)
+	$CanvasLayer.add_child(gameOverPanel)"
 
 [node name="screen" type="Node2D"]
 script = SubResource( 1 )
@@ -123,4 +138,24 @@ margin_right = 200.0
 margin_bottom = 119.0
 
 [node name="DepartmentReviewPanel" parent="CanvasLayer" instance=ExtResource( 4 )]
+
+[node name="RankingPanel" parent="CanvasLayer" instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -182.0
+margin_right = 150.0
+margin_bottom = 182.0
+
+[node name="GameOverPanel" parent="CanvasLayer" instance=ExtResource( 6 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -183.0
+margin_top = -75.0
+margin_right = 183.0
+margin_bottom = 75.0
 [connection signal="timeout" from="CanvasLayer/TimerPanel" to="viewports/container1/Splitscreen" method="_on_RoundTimer_timeout"]
