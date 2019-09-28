@@ -36,6 +36,6 @@ func get_successors(accepted):
 		return positive_succ
 	else:
 		return negative_succ
-
+		
 func is_general():
 	return general

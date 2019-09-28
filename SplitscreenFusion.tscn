@@ -38,6 +38,7 @@ margin_right = 640.0
 margin_bottom = 1077.0
 rect_scale = Vector2( 0.53, 0.556 )
 id = 2
+department = "b"
 
 [node name="container3" type="ViewportContainer" parent="viewports"]
 margin_left = 684.0
@@ -52,6 +53,7 @@ margin_right = 640.0
 margin_bottom = 1077.0
 rect_scale = Vector2( 0.53, 0.556 )
 id = 3
+department = "c"
 
 [node name="Camera2D" type="Camera2D" parent="viewports"]
 position = Vector2( 511.136, 297.224 )

@@ -1,0 +1,17 @@
+[gd_scene format=2]
+
+[node name="end_screen" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 200.0
+margin_bottom = 300.0
+
+[node name="Text" type="Label" parent="Panel"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 195.0
+margin_bottom = 31.0
+text = "Game Over"
+align = 1
+valign = 1
+autowrap = true

@@ -27,8 +27,11 @@ _global_script_class_icons={
 [application]
 
 config/name="huettenjam"
-run/main_scene="res://game.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GlobalPools="*res://scripts/cards_pool.gd"
 
 [debug]
 
