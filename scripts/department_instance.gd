@@ -121,8 +121,11 @@ func comupute_influences(curr_card, answer):
 	update_stats_ui(get_all_stats())
 	
 func update_stats_ui(values):
-	for i in range(0, GlobalPools.n_d_stats):
-		my_status[i].set_influence(float(values[i]))
+	#for i in range(0, GlobalPools.n_d_stats):
+		#my_status[i].set_influence(float(values[i]))
+	my_status[0].set_absolute_influence(float(workers))
+	my_status[1].set_absolute_influence(float(managers))
+	my_status[2].set_absolute_influence(float(custom))
 
 func update_indicators_ui(values):
 	for i in range(0, GlobalPools.n_d_stats):

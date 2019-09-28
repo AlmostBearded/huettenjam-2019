@@ -72,4 +72,5 @@ percent_visible = false
 position = Vector2( 30, 10 )
 frames = SubResource( 5 )
 animation = "arrowUp"
+frame = 2
 playing = true

@@ -31,5 +31,8 @@ func set_influence(amount):
 		value = -2;
 	$TextureProgress.set_value($TextureProgress.value + value)
 	
+func set_absolute_influence(amount):
+	$TextureProgress.set_value(amount * 100)
+	
 func reset_influence():
 		$influence.visible = false
