@@ -21,7 +21,9 @@ size_flags_horizontal = 3
 stretch = true
 
 [node name="Splitscreen" parent="viewports/container1" instance=ExtResource( 1 )]
+margin_left = 32.0
 margin_top = 28.0
+margin_right = 352.0
 margin_bottom = 568.0
 
 [node name="container2" type="ViewportContainer" parent="viewports"]
@@ -32,9 +34,9 @@ size_flags_horizontal = 3
 stretch = true
 
 [node name="Splitscreen2" parent="viewports/container2" instance=ExtResource( 1 )]
-margin_left = 32.0
+margin_left = 30.0
 margin_top = 28.0
-margin_right = 352.0
+margin_right = 350.0
 margin_bottom = 568.0
 id = 2
 department = "b"
@@ -48,9 +50,9 @@ stretch = true
 
 [node name="Splitscreen3" parent="viewports/container3" instance=ExtResource( 1 )]
 anchor_right = 1.0
-margin_left = 32.0
+margin_left = 28.0
 margin_top = 28.0
-margin_right = 34.0
+margin_right = 30.0
 margin_bottom = 568.0
 id = 3
 department = "c"

@@ -11,12 +11,12 @@ bg_color = Color( 0, 0, 0, 1 )
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 24
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 1, 1, 1, 1 )
 
 [node name="Decision" type="Panel"]
@@ -28,7 +28,7 @@ custom_styles/panel = SubResource( 1 )
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 310.0
-margin_bottom = 160.0
+margin_bottom = 130.0
 custom_styles/panel = SubResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="PortraitPanel"]
@@ -37,9 +37,8 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -210.0
-margin_top = -150.0
+margin_top = -120.0
 margin_right = -90.0
-margin_bottom = -30.0
 
 [node name="QuestionPanel" type="Panel" parent="."]
 margin_left = 10.0
@@ -53,7 +52,7 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = 290.0
 margin_bottom = 190.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Here is an important decision. It is of outmost importance."
 autowrap = true
@@ -63,7 +62,7 @@ margin_left = 10.0
 margin_top = 350.0
 margin_right = 310.0
 margin_bottom = 400.0
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 5 )
 
 [node name="SeperationLine" type="ColorRect" parent="DecisionPanel"]
 margin_left = 145.0
