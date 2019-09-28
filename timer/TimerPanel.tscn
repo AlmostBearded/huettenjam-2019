@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://images/clock.png" type="Texture" id=1]
+[ext_resource path="res://fonts/m5x7.tres" type="DynamicFont" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends PanelContainer
+
+signal timeout
+
+func _ready():
+	$HBoxContainer/Timer.connect(\"timeout\", self, \"_on_timeout\")
+
+func _process(delta):
+	var time_left : int = $HBoxContainer/Timer.time_left
+	var mins : int = int(time_left / 60)
+	var secs : int = time_left - mins * 60
+	$HBoxContainer/Label.text = str(\"%02d\" % mins, \":\", \"%02d\" % secs)
+
+func _on_timeout():
+	emit_signal(\"timeout\")"
+
+[node name="TimerPanel" type="PanelContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -480.0
+margin_top = -270.0
+margin_right = -378.0
+margin_bottom = -224.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = SubResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 95.0
+margin_bottom = 39.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 1 )
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_left = 36.0
+margin_top = 3.0
+margin_right = 88.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 2 )
+text = "02:00"
+
+[node name="Timer" type="Timer" parent="HBoxContainer"]
+wait_time = 120.0
+one_shot = true
+autostart = true
