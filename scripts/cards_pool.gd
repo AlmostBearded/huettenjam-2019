@@ -12,7 +12,7 @@ func _ready():
 	file.open("res://data/cards_pool.csv", file.READ)
 	var header = file.get_csv_line ()
 	var stats = []
-	for i in range(5, 5 + 2*n_stats):
+	for i in range(6, 6+2*n_stats):
 		var temp = header[i]
 		stats.append(header[i])
 	while !file.eof_reached():
@@ -29,41 +29,7 @@ func _ready():
 		curr_poll.insert(c)
 	file.close()
 	
-#IMPORTANT !! TOY EXAMPLE WITH PLAYER 1 = DEPARTME a
-#(should be done per-player)
-func _process(delta):
-	if(curr_card == null):
-		curr_card = draw_card('a',str(1))
 	
-	var accepted = -1
-	if Input.is_action_pressed("accept_p1"):
-		accepted = 1
-	if Input.is_action_pressed("reject_p1"):
-		accepted = 0
-	if(accepted > -1):
-		var new_card = select_next('a', curr_card, true if accepted == 1 else false)
-		if(new_card == null):
-			#EMPTY
-			the_end = true
-		if(curr_card.is_general()):
-			add_card('a',curr_card)
-		curr_card = new_card
-	
-
-func draw_card(department, card_id):
-	return all_pools[department].pull(card_id)
-	
-func add_card(department,card):
-	all_pools[department].insert(card)
-	
-func select_next(department, curr_card, answer):
-	var succ_list = curr_card.get_successors(answer)
-	var selected_succ = str(all_pools[department].select_succ(succ_list))
-	if(int(selected_succ) == -1):
-		return null
-	return draw_card(department, selected_succ)
-	
-
 func build_card(line, stats):
 	var id = line[0]
 	var dep = line[1]
@@ -76,10 +42,10 @@ func build_card(line, stats):
 	var neg_e = {}
 	
 	for stat in range(0,n_stats):
-		pos_e[stat] = line[6+stat]
+		pos_e[stats[stat]] = line[6+stat]
 		
 	for stat in range(n_stats, 2*n_stats):
-		neg_e[stat] = line[6+stat]
+		neg_e[stats[stat]] = line[6+stat]
 	
 	var pos_s = {}
 	var succ = line[6+2*n_stats]

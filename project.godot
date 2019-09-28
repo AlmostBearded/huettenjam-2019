@@ -30,6 +30,10 @@ config/name="huettenjam"
 run/main_scene="res://StartScreen.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalPools="*res://scripts/cards_pool.gd"
+
 [debug]
 
 settings/stdout/print_fps=true

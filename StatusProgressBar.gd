@@ -25,7 +25,7 @@ func show_influence(amount):
 		
 		
 func set_influence(amount):
-	var value;
+	var value = amount;
 	if amount == INFLUENCE_ENUM.SMALL_POSITIVE_INFLUENCE:
 		value = 1;
 	if amount == INFLUENCE_ENUM.BIG_POSITIVE_INFLUENCE:

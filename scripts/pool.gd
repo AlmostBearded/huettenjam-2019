@@ -19,8 +19,9 @@ func pull(id):
 	dict.erase(id)
 	size = size - 1
 	return card
-
-func select_succ(succ_list):
+	
+func select_succ(card, answer):
+	var succ_list = card.get_successors(answer)
 	if(size == 0):
 		return -1
 	randomize()

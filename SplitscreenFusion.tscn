@@ -39,6 +39,7 @@ margin_top = 28.0
 margin_right = 352.0
 margin_bottom = 568.0
 id = 2
+department = "b"
 
 [node name="container3" type="ViewportContainer" parent="viewports"]
 margin_left = 642.0
@@ -54,6 +55,7 @@ margin_top = 28.0
 margin_right = 34.0
 margin_bottom = 568.0
 id = 3
+department = "c"
 
 [node name="Camera2D" type="Camera2D" parent="viewports"]
 position = Vector2( 511.136, 297.224 )
