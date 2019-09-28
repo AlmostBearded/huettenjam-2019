@@ -1,5 +1,6 @@
 extends Node2D
 
+#jdfoei
 func _ready():
 	GlobalPools.load_csv()
 
