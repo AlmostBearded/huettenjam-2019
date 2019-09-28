@@ -24,10 +24,9 @@ func select_succ(card, answer):
 	var succ_list = card.get_successors(answer)
 	if(size == 0):
 		return -1
-	randomize()
 	#if no successors get one of the general ones at random
 	if succ_list.empty():
-		return get_general_card()
+		return get_general_card(card.id)
 	#just one successors
 	elif succ_list.size() == 1:
 		return succ_list.keys()[0]
@@ -42,7 +41,7 @@ func select_succ(card, answer):
 				actual_succ_list[key] = succ_list[key]
 		#if there are no succecsors take one of the general 
 		if(option_sum == 0):
-			return get_general_card()
+			return get_general_card(card.id)
 		else:
 			var random = randi() % option_sum
 			var range_start = 0
@@ -55,10 +54,12 @@ func select_succ(card, answer):
 					range_start = range_end
 		
 
-func get_general_card():
-	var random = randi() % 100
+func get_general_card(curr_c_id):
+	randomize()
 	var possible_succ = []
 	for key in dict.keys():
+		if key == curr_c_id:
+			continue
 		if dict[key].is_general():
 			possible_succ.append(key)
 	return possible_succ[randi() % possible_succ.size()]		

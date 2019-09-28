@@ -32,10 +32,20 @@ func initiate_department():
 	my_status = [$StatusPanel/Status, $StatusPanel/Status2, $StatusPanel/Status3]
 	my_status_labels = [$StatusPanel/Status/Label, $StatusPanel/Status2/Label, $StatusPanel/Status3/Label]
 	
+	my_status_labels[0].text = "Workers"
+	my_status_labels[1].text = "Managers"
+	
+	if(department == "Law"):
+		my_status_labels[2].text = "Thoroughness"
+	elif(department == "SW/HW"):
+		my_status_labels[2].text = "Dev Quality"
+	else: #Sales
+		my_status_labels[2].text = "#Customers"
+	
 	var stats = curr_card.positive_effects.keys()
 	var local_i = 0
 	for i in range(custom_stats_start_index, custom_stats_start_index + GlobalPools.n_d_stats):
-		my_status_labels[local_i].text = stats[i]
+		#my_status_labels[local_i].text = stats[i]
 		custom_stats.append(stats[i])
 		local_i += 1
 		
