@@ -49,8 +49,10 @@ func update_stats(deltas):
 	workers = clamp(workers + float(deltas[1]) / Company.MAX_VAL, 0, 1)
 	custom = clamp(custom + float(deltas[2]) / Company.MAX_VAL, 0, 1)
 	
-	#TODO: update personal score
-	score += 0
+	if(managers == 0 or workers == 0 or custom == 0):
+		score = 0
+	else:
+		score = (2*workers + 4*managers +3*custom)*100000
 	
 # lifecycle
 func _ready():

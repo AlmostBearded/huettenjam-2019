@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://fonts/m5x7_header.tres" type="DynamicFont" id=1]
 [ext_resource path="res://fonts/m5x7.tres" type="DynamicFont" id=2]
@@ -86,6 +86,21 @@ var last_value : float = 0.5
 func _enter_tree():
 	if (Company.departments.size() <= 0):
 		return
+	text = str(int(last_value * 100), \" -> \", int(Company.departments[\"1\"].score * 100))
+
+func _exit_tree():
+	if (Company.departments.size() <= 0):
+		return
+	last_value = Company.departments[\"1\"].score"
+
+[sub_resource type="GDScript" id=6]
+script/source = "extends Label
+
+var last_value : float = 0.5
+
+func _enter_tree():
+	if (Company.departments.size() <= 0):
+		return
 	text = str(int(last_value * 100), \" -> \", int(Company.departments[\"2\"].managers * 100))
 
 func _exit_tree():
@@ -94,7 +109,7 @@ func _exit_tree():
 	last_value = Company.departments[\"2\"].managers
 "
 
-[sub_resource type="GDScript" id=6]
+[sub_resource type="GDScript" id=7]
 script/source = "extends Label
 
 var last_value : float = 0.5
@@ -110,7 +125,7 @@ func _exit_tree():
 	last_value = Company.departments[\"2\"].workers
 "
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=8]
 script/source = "extends Label
 
 var last_value : float = 0.5
@@ -126,7 +141,22 @@ func _exit_tree():
 	last_value = Company.departments[\"2\"].custom
 "
 
-[sub_resource type="GDScript" id=8]
+[sub_resource type="GDScript" id=12]
+script/source = "extends Label
+
+var last_value : float = 0.5
+
+func _enter_tree():
+	if (Company.departments.size() <= 0):
+		return
+	text = str(int(last_value * 100), \" -> \", int(Company.departments[\"2\"].score * 100))
+
+func _exit_tree():
+	if (Company.departments.size() <= 0):
+		return
+	last_value = Company.departments[\"2\"].score"
+
+[sub_resource type="GDScript" id=9]
 script/source = "extends Label
 
 var last_value : float = 0.5
@@ -142,7 +172,7 @@ func _exit_tree():
 	last_value = Company.departments[\"3\"].managers
 "
 
-[sub_resource type="GDScript" id=9]
+[sub_resource type="GDScript" id=10]
 script/source = "extends Label
 
 var last_value : float = 0.5
@@ -158,7 +188,7 @@ func _exit_tree():
 	last_value = Company.departments[\"3\"].workers
 "
 
-[sub_resource type="GDScript" id=10]
+[sub_resource type="GDScript" id=11]
 script/source = "extends Label
 
 var last_value : float = 0.5
@@ -172,6 +202,22 @@ func _exit_tree():
 	if (Company.departments.size() <= 0):
 		return
 	last_value = Company.departments[\"3\"].custom
+"
+
+[sub_resource type="GDScript" id=13]
+script/source = "extends Label
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
 "
 
 [node name="DepartmentReviewPanel" type="PanelContainer"]
@@ -313,8 +359,9 @@ margin_top = 152.0
 margin_right = 366.0
 margin_bottom = 178.0
 custom_fonts/font = ExtResource( 2 )
-text = "Score: 0 -> 123"
+text = "Score: 0 -> 0"
 align = 1
+script = SubResource( 5 )
 
 [node name="Sales" type="PanelContainer" parent="VBoxContainer/GridContainer"]
 margin_left = 384.0
@@ -383,7 +430,7 @@ margin_right = 270.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
 text = "50 -> 33"
-script = SubResource( 5 )
+script = SubResource( 6 )
 
 [node name="Workers" type="Label" parent="VBoxContainer/GridContainer/Sales/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
 margin_top = 30.0
@@ -399,7 +446,7 @@ margin_right = 270.0
 margin_bottom = 56.0
 custom_fonts/font = ExtResource( 2 )
 text = "50 -> 71"
-script = SubResource( 6 )
+script = SubResource( 7 )
 
 [node name="ProductQuality" type="Label" parent="VBoxContainer/GridContainer/Sales/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
 margin_top = 60.0
@@ -415,15 +462,16 @@ margin_right = 270.0
 margin_bottom = 86.0
 custom_fonts/font = ExtResource( 2 )
 text = "50 -> 62"
-script = SubResource( 7 )
+script = SubResource( 8 )
 
 [node name="Score" type="Label" parent="VBoxContainer/GridContainer/Sales/VBoxContainer"]
 margin_top = 152.0
 margin_right = 372.0
 margin_bottom = 178.0
 custom_fonts/font = ExtResource( 2 )
-text = "Score: 0 -> 123"
+text = "Score: 0 -> 0"
 align = 1
+script = SubResource( 12 )
 
 [node name="Law" type="PanelContainer" parent="VBoxContainer/GridContainer"]
 margin_top = 196.0
@@ -493,7 +541,7 @@ margin_right = 248.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
 text = "50 -> 33"
-script = SubResource( 8 )
+script = SubResource( 9 )
 
 [node name="Workers" type="Label" parent="VBoxContainer/GridContainer/Law/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
 margin_top = 30.0
@@ -509,7 +557,7 @@ margin_right = 248.0
 margin_bottom = 56.0
 custom_fonts/font = ExtResource( 2 )
 text = "50 -> 71"
-script = SubResource( 9 )
+script = SubResource( 10 )
 
 [node name="ProductQuality" type="Label" parent="VBoxContainer/GridContainer/Law/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
 margin_top = 60.0
@@ -525,15 +573,16 @@ margin_right = 248.0
 margin_bottom = 86.0
 custom_fonts/font = ExtResource( 2 )
 text = "50 -> 62"
-script = SubResource( 10 )
+script = SubResource( 11 )
 
 [node name="Score" type="Label" parent="VBoxContainer/GridContainer/Law/VBoxContainer"]
 margin_top = 152.0
 margin_right = 366.0
 margin_bottom = 178.0
 custom_fonts/font = ExtResource( 2 )
-text = "Score: 0 -> 123"
+text = "Score: 0 -> 0"
 align = 1
+script = SubResource( 13 )
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 margin_top = 464.0
