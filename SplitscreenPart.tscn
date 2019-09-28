@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/department_instance.gd" type="Script" id=1]
 [ext_resource path="res://images/background.png" type="Texture" id=2]
 [ext_resource path="res://images/background_red.png" type="Texture" id=3]
 [ext_resource path="res://Decision.tscn" type="PackedScene" id=4]
-[ext_resource path="res://StatusProgressBar.tscn" type="PackedScene" id=5]
-[ext_resource path="res://StatusPanel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://StatusPanel.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -34,25 +33,4 @@ animation = "background"
 
 [node name="ViewportContainer" parent="." instance=ExtResource( 4 )]
 
-[node name="Status" parent="." instance=ExtResource( 5 )]
-visible = false
-margin_left = 40.0
-margin_top = 435.0
-margin_right = 100.0
-margin_bottom = 530.0
-
-[node name="Status2" parent="." instance=ExtResource( 5 )]
-visible = false
-margin_left = 130.0
-margin_top = 435.0
-margin_right = 190.0
-margin_bottom = 530.0
-
-[node name="Status3" parent="." instance=ExtResource( 5 )]
-visible = false
-margin_left = 220.0
-margin_top = 435.0
-margin_right = 280.0
-margin_bottom = 530.0
-
-[node name="StatusPanel" parent="." instance=ExtResource( 6 )]
+[node name="StatusPanel" parent="." instance=ExtResource( 5 )]
