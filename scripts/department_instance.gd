@@ -136,7 +136,7 @@ func reset_indicators_ui():
 		my_status[i].reset_influence()
 		
 func go_ahead(answer):
-	var succ_id = pool.select_succ(curr_card, true)
+	var succ_id = pool.select_succ(curr_card, answer)
 	var new_card = pool.pull(succ_id)
 	if(curr_card.is_general()):
 		pool.insert(curr_card)
