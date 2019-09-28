@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://StatusProgressBar.tscn" type="PackedScene" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="StatusPanel" type="Panel"]
+margin_left = 4.0
+margin_top = 420.0
+margin_right = 316.0
+margin_bottom = 536.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Status" parent="." instance=ExtResource( 1 )]
+margin_left = 24.0
+margin_top = 10.0
+margin_right = 84.0
+margin_bottom = 105.0
+
+[node name="Status2" parent="." instance=ExtResource( 1 )]
+margin_left = 126.0
+margin_top = 10.0
+margin_right = 186.0
+margin_bottom = 105.0
+
+[node name="Status3" parent="." instance=ExtResource( 1 )]
+margin_left = 228.0
+margin_top = 10.0
+margin_right = 288.0
+margin_bottom = 105.0

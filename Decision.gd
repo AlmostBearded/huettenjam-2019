@@ -8,7 +8,4 @@ var imageArray = [man1_image, man2_image, woman1_image]
 
 func _ready():
 	randomize()
-	set_portrait()
-	
-func set_portrait():
 	$PortraitPanel/portrait_background/portrait.set_texture(imageArray[randi()%imageArray.size()])

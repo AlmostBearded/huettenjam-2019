@@ -29,8 +29,8 @@ func initiate_department():
 	custom_stats_start_index = GlobalPools.n_c_stats #+ GlobalPools.index_offset 
 	custom_stats_start_index +=  (id - 1) * GlobalPools.n_d_stats
 	
-	my_status = [$Status, $Status2, $Status3]
-	my_status_labels = [$Status/Label, $Status2/Label, $Status3/Label]
+	my_status = [$StatusPanel/Status, $StatusPanel/Status2, $StatusPanel/Status3]
+	my_status_labels = [$StatusPanel/Status/Label, $StatusPanel/Status2/Label, $StatusPanel/Status3/Label]
 	
 	var stats = curr_card.positive_effects.keys()
 	var local_i = 0
@@ -131,44 +131,37 @@ func go_ahead(answer):
 #OLD STUFF		
 	
 func show_left_influences(curr_card):
-	var name = 'neg_%s'%$Status/Label.text
-	$Status.show_influence(-int(curr_card.negative_effects[name]))
-	name = 'neg_%s'%$Status2/Label.text
-	$Status2.show_influence(-int(curr_card.negative_effects[name]))
-	name = 'neg_%s'%$Status3/Label.text
-	$Status3.show_influence(-int(curr_card.negative_effects[name]))
+	var name = 'neg_%s'%$StatusPanel/Status/Label.text
+	$StatusPanel/Status.show_influence(-int(curr_card.negative_effects[name]))
+	name = 'neg_%s'%$StatusPanel/Status2/Label.text
+	$StatusPanel/Status2.show_influence(-int(curr_card.negative_effects[name]))
+	name = 'neg_%s'%$StatusPanel/Status3/Label.text
+	$StatusPanel/Status3.show_influence(-int(curr_card.negative_effects[name]))
 
 func show_right_influences(curr_card):
-	var name = 'pos_%s'%$Status/Label.text
-	$Status.show_influence(int(curr_card.positive_effects[name]))
-	name = 'pos_%s'%$Status2/Label.text
-	$Status2.show_influence(int(curr_card.positive_effects[name]))
-	name = 'pos_%s'%$Status3/Label.text
-	$Status3.show_influence(int(curr_card.positive_effects[name]))
+	var name = 'pos_%s'%$StatusPanel/Status/Label.text
+	$StatusPanel/Status.show_influence(int(curr_card.positive_effects[name]))
+	name = 'pos_%s'%$StatusPanel/Status2/Label.text
+	$StatusPanel/Status2.show_influence(int(curr_card.positive_effects[name]))
+	name = 'pos_%s'%$StatusPanel/Status3/Label.text
+	$StatusPanel/Status3.show_influence(int(curr_card.positive_effects[name]))
 	
 func set_left_influences(curr_card):
-	var name = 'neg_%s'%$Status/Label.text
-	$Status.set_influence(-int(curr_card.negative_effects[name]))
-	name = 'neg_%s'%$Status2/Label.text
-	$Status2.set_influence(-int(curr_card.negative_effects[name]))
-	name = 'neg_%s'%$Status3/Label.text
-	$Status3.set_influence(-int(curr_card.negative_effects[name]))
+	var name = 'neg_%s'%$StatusPanel/Status/Label.text
+	$StatusPanel/Status.set_influence(-int(curr_card.negative_effects[name]))
+	name = 'neg_%s'%$StatusPanel/Status2/Label.text
+	$StatusPanel/Status2.set_influence(-int(curr_card.negative_effects[name]))
+	name = 'neg_%s'%$StatusPanel/Status3/Label.text
+	$StatusPanel/Status3.set_influence(-int(curr_card.negative_effects[name]))
 
 func set_right_influences(curr_card):
-	var name = 'pos_%s'%$Status/Label.text
-	$Status.set_influence(int(curr_card.positive_effects[name]))
-	name = 'pos_%s'%$Status2/Label.text
-	$Status2.set_influence(int(curr_card.positive_effects[name]))
-	name = 'pos_%s'%$Status3/Label.text
-	$Status3.set_influence(int(curr_card.positive_effects[name]))
+	var name = 'pos_%s'%$StatusPanel/Status/Label.text
+	$StatusPanel/Status.set_influence(int(curr_card.positive_effects[name]))
+	name = 'pos_%s'%$StatusPanel/Status2/Label.text
+	$StatusPanel/Status2.set_influence(int(curr_card.positive_effects[name]))
+	name = 'pos_%s'%$StatusPanel/Status3/Label.text
+	$StatusPanel/Status3.set_influence(int(curr_card.positive_effects[name]))
 	
 func reset_influences():
 	for s in my_status:
 		s.reset_influence()
-	
-	#$Status.reset_influence()
-	#$Status2.reset_influence()
-	#$Status3.reset_influence()
-	#$Status4.reset_influence()
-	#$Status5.reset_influence()
-
