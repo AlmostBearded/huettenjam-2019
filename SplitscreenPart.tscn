@@ -21,39 +21,26 @@ margin_bottom = 540.0
 script = ExtResource( 1 )
 
 [node name="ViewportContainer" parent="." instance=ExtResource( 2 )]
-margin_left = 5.0
-margin_top = -0.463318
-margin_right = 325.0
-margin_bottom = 539.537
+margin_left = 0.0290527
+margin_right = 320.029
+margin_bottom = 540.0
 
 [node name="Status" parent="." instance=ExtResource( 3 )]
-margin_left = 10.0
+margin_left = 40.0
 margin_top = 435.0
-margin_right = 70.0
+margin_right = 100.0
 margin_bottom = 530.0
 
 [node name="Status2" parent="." instance=ExtResource( 3 )]
-margin_left = 70.0
-margin_top = 435.0
-margin_right = 130.0
-margin_bottom = 530.0
-
-[node name="Status3" parent="." instance=ExtResource( 3 )]
 margin_left = 130.0
 margin_top = 435.0
 margin_right = 190.0
 margin_bottom = 530.0
 
-[node name="Status4" parent="." instance=ExtResource( 3 )]
-margin_left = 190.0
+[node name="Status3" parent="." instance=ExtResource( 3 )]
+margin_left = 220.0
 margin_top = 435.0
-margin_right = 250.0
-margin_bottom = 530.0
-
-[node name="Status5" parent="." instance=ExtResource( 3 )]
-margin_left = 250.0
-margin_top = 435.0
-margin_right = 310.0
+margin_right = 280.0
 margin_bottom = 530.0
 
 [node name="Panel" type="Panel" parent="."]
@@ -63,12 +50,12 @@ margin_bottom = 430.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="Panel2" type="Panel" parent="."]
-margin_left = 317.5
-margin_right = 327.5
+margin_left = 315.0
+margin_right = 320.0
 margin_bottom = 540.0
 custom_styles/panel = SubResource( 2 )
 
 [node name="Panel3" type="Panel" parent="."]
-margin_right = 10.0
+margin_right = 5.0
 margin_bottom = 540.0
 custom_styles/panel = SubResource( 3 )
