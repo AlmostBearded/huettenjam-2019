@@ -7,50 +7,52 @@
 [node name="viewports" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_min_size = Vector2( 1021, 596 )
+margin_right = 960.0
+margin_bottom = 540.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 5
 alignment = 1
 
 [node name="container1" type="ViewportContainer" parent="viewports"]
-margin_right = 337.0
-margin_bottom = 596.0
+margin_right = 316.0
+margin_bottom = 540.0
 size_flags_horizontal = 3
 stretch = true
 
 [node name="Splitscreen" parent="viewports/container1" instance=ExtResource( 1 )]
-margin_top = -3.0
-margin_right = 640.0
-margin_bottom = 1077.0
-rect_scale = Vector2( 0.53, 0.556 )
+margin_left = 32.0
+margin_top = 28.0
+margin_right = 352.0
+margin_bottom = 568.0
 
 [node name="container2" type="ViewportContainer" parent="viewports"]
-margin_left = 342.0
-margin_right = 679.0
-margin_bottom = 596.0
+margin_left = 321.0
+margin_right = 637.0
+margin_bottom = 540.0
 size_flags_horizontal = 3
 stretch = true
 
 [node name="Splitscreen2" parent="viewports/container2" instance=ExtResource( 1 )]
-margin_top = -3.0
-margin_right = 640.0
-margin_bottom = 1077.0
-rect_scale = Vector2( 0.53, 0.556 )
+margin_left = 32.0
+margin_top = 28.0
+margin_right = 352.0
+margin_bottom = 568.0
 id = 2
 
 [node name="container3" type="ViewportContainer" parent="viewports"]
-margin_left = 684.0
-margin_right = 1021.0
-margin_bottom = 596.0
+margin_left = 642.0
+margin_right = 960.0
+margin_bottom = 540.0
 size_flags_horizontal = 3
 stretch = true
 
 [node name="Splitscreen3" parent="viewports/container3" instance=ExtResource( 1 )]
-margin_top = -3.0
-margin_right = 640.0
-margin_bottom = 1077.0
-rect_scale = Vector2( 0.53, 0.556 )
+anchor_right = 1.0
+margin_left = 32.0
+margin_top = 28.0
+margin_right = 34.0
+margin_bottom = 568.0
 id = 3
 
 [node name="Camera2D" type="Camera2D" parent="viewports"]

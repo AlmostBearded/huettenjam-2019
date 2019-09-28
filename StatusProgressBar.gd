@@ -7,21 +7,21 @@ func _ready():
 	
 func show_influence(amount):
 	if amount == INFLUENCE_ENUM.SMALL_POSITIVE_INFLUENCE:
+		$influence.scale = Vector2(0.75, 0.75)
+		$influence.play("arrowUp")
 		$influence.visible = true
-		$influence.scale = Vector2(0.1, 0.1)
-		$influence.modulate = Color(0, 1, 0)
 	if amount == INFLUENCE_ENUM.BIG_POSITIVE_INFLUENCE:
+		$influence.scale = Vector2(1, 1)
+		$influence.play("arrowUp")
 		$influence.visible = true
-		$influence.scale = Vector2(0.15, 0.15)
-		$influence.modulate = Color(0, 1, 0)
 	if amount == INFLUENCE_ENUM.SMALL_NEGATIVE_INFLUENCE:
+		$influence.scale = Vector2(0.75, 0.75)
+		$influence.play("arrowDown")
 		$influence.visible = true
-		$influence.scale = Vector2(0.1, 0.1)
-		$influence.modulate = Color(1, 0, 0)
 	if amount == INFLUENCE_ENUM.BIG_NEGATIVE_INFLUENCE:
+		$influence.scale = Vector2(1, 1)
+		$influence.play("arrowDown")
 		$influence.visible = true
-		$influence.scale = Vector2(0.15, 0.15)
-		$influence.modulate = Color(1, 0, 0)
 		
 		
 func set_influence(amount):
