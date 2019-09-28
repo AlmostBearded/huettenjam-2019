@@ -12,7 +12,7 @@ script/source = "extends PanelContainer
 signal button_clicked
 signal game_ended
 
-var rounds = 0
+var rounds = 1
 
 func _ready():
 	$VBoxContainer/Button.connect(\"button_up\", self, \"_on_button_clicked\")
@@ -20,6 +20,8 @@ func _ready():
 func _enter_tree():
 	if rounds == 5:
 		$VBoxContainer/Button.text = \"End Game!\"
+	else:
+		$VBoxContainer/Button.text = str(\"Start Round (\", rounds + 1, \"/\", 5, \")\")
 
 func _on_button_clicked():
 	if rounds == 5:
