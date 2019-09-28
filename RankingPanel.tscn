@@ -1,0 +1,226 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://fonts/m5x7_header.tres" type="DynamicFont" id=1]
+[ext_resource path="res://images/woman1.png" type="Texture" id=2]
+[ext_resource path="res://fonts/m5x7.tres" type="DynamicFont" id=3]
+[ext_resource path="res://images/man1.png" type="Texture" id=4]
+[ext_resource path="res://images/man2.png" type="Texture" id=5]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Label
+
+func _enter_tree():
+	if Company.departments.size() <= 0:
+		return
+	
+	var score1 = Company.departments[\"1\"].score
+	var score2 = Company.departments[\"2\"].score
+	var score3 = Company.departments[\"3\"].score
+	
+	var rank = 1 if score1 >= score2 and score1 >= score3 else 2 if score1 >= score2 or score1 >= score3 else 3
+	
+	text = str(\"#\", rank)"
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Label
+
+func _enter_tree():
+	if Company.departments.size() <= 0:
+		return
+	text = str(\"Score: \", Company.departments[\"1\"].score)"
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Label
+
+func _enter_tree():
+	if Company.departments.size() <= 0:
+		return
+	
+	var score1 = Company.departments[\"1\"].score
+	var score2 = Company.departments[\"2\"].score
+	var score3 = Company.departments[\"3\"].score
+	
+	var rank = 1 if score2 >= score1 and score2 >= score3 else 2 if score2 >= score1 or score2 >= score3 else 3
+	
+	text = str(\"#\", rank)"
+
+[sub_resource type="GDScript" id=5]
+script/source = "extends Label
+
+func _enter_tree():
+	if Company.departments.size() <= 0:
+		return
+	text = str(\"Score: \", Company.departments[\"2\"].score)"
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Label
+
+func _enter_tree():
+	if Company.departments.size() <= 0:
+		return
+	
+	var score1 = Company.departments[\"1\"].score
+	var score2 = Company.departments[\"2\"].score
+	var score3 = Company.departments[\"3\"].score
+	
+	var rank = 1 if score3 >= score1 and score3 >= score2 else 2 if score3 >= score1 or score3 >= score2 else 3
+	
+	text = str(\"#\", rank)"
+
+[sub_resource type="GDScript" id=6]
+script/source = "extends Label
+
+func _enter_tree():
+	if Company.departments.size() <= 0:
+		return
+	text = str(\"Score: \", Company.departments[\"3\"].score)"
+
+[node name="RankingPanel" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -680.0
+margin_bottom = -408.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 293.0
+margin_bottom = 357.0
+custom_constants/separation = 22
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 286.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 1 )
+text = "Ranking"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+margin_top = 54.0
+margin_right = 286.0
+margin_bottom = 350.0
+custom_constants/vseparation = 25
+custom_constants/hseparation = 40
+columns = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/GridContainer"]
+margin_top = 25.0
+margin_right = 32.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 1 )
+text = "#1"
+align = 1
+script = SubResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/GridContainer"]
+margin_left = 72.0
+margin_right = 286.0
+margin_bottom = 82.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/HBoxContainer"]
+margin_right = 82.0
+margin_bottom = 82.0
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GridContainer/HBoxContainer"]
+margin_left = 86.0
+margin_top = 13.0
+margin_right = 214.0
+margin_bottom = 69.0
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer/HBoxContainer/VBoxContainer"]
+margin_right = 128.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 3 )
+text = "Development"
+
+[node name="Score" type="Label" parent="VBoxContainer/GridContainer/HBoxContainer/VBoxContainer"]
+margin_top = 30.0
+margin_right = 128.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 3 )
+text = "Score:"
+script = SubResource( 1 )
+
+[node name="Label3" type="Label" parent="VBoxContainer/GridContainer"]
+margin_top = 132.0
+margin_right = 32.0
+margin_bottom = 164.0
+custom_fonts/font = ExtResource( 1 )
+text = "#1"
+align = 1
+script = SubResource( 3 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/GridContainer"]
+margin_left = 72.0
+margin_top = 107.0
+margin_right = 286.0
+margin_bottom = 189.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/HBoxContainer2"]
+margin_right = 82.0
+margin_bottom = 82.0
+texture = ExtResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GridContainer/HBoxContainer2"]
+margin_left = 86.0
+margin_top = 13.0
+margin_right = 146.0
+margin_bottom = 69.0
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer/HBoxContainer2/VBoxContainer"]
+margin_right = 60.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 3 )
+text = "Sales"
+
+[node name="Score" type="Label" parent="VBoxContainer/GridContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 30.0
+margin_right = 60.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 3 )
+text = "Score:"
+script = SubResource( 5 )
+
+[node name="Label4" type="Label" parent="VBoxContainer/GridContainer"]
+margin_top = 239.0
+margin_right = 32.0
+margin_bottom = 271.0
+custom_fonts/font = ExtResource( 1 )
+text = "#1"
+align = 1
+script = SubResource( 4 )
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/GridContainer"]
+margin_left = 72.0
+margin_top = 214.0
+margin_right = 286.0
+margin_bottom = 296.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/HBoxContainer3"]
+margin_right = 82.0
+margin_bottom = 82.0
+texture = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GridContainer/HBoxContainer3"]
+margin_left = 86.0
+margin_top = 13.0
+margin_right = 146.0
+margin_bottom = 69.0
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer/HBoxContainer3/VBoxContainer"]
+margin_right = 60.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 3 )
+text = "Sales"
+
+[node name="Score" type="Label" parent="VBoxContainer/GridContainer/HBoxContainer3/VBoxContainer"]
+margin_top = 30.0
+margin_right = 60.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 3 )
+text = "Score:"
+script = SubResource( 6 )
