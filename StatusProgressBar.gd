@@ -29,7 +29,7 @@ func set_influence(amount):
 		value = -1;
 	if amount == INFLUENCE_ENUM.BIG_NEGATIVE_INFLUENCE:
 		value = -2;
-	$ProgressBar.set_value($ProgressBar.value + value)
+	$TextureProgress.set_value($TextureProgress.value + value)
 	
 func reset_influence():
 		$influence.visible = false

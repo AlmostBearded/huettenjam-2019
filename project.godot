@@ -40,6 +40,7 @@ config/icon="res://icon.png"
 
 GlobalPools="*res://scripts/cards_pool.gd"
 Company="*res://scripts/company.gd"
+AudioPlayer="*res://AudioPlayer.tscn"
 
 [debug]
 
