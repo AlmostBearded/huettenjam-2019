@@ -1,9 +1,9 @@
 ,,,,,,Positive Globals,,,,Negative Globals,,,,Positive HW/SW,,,Negative HW/SW,,,Positive Sales,,,Negative Sales,,,Positive Law,,,Negative Law,,,,
-Id,department,task,is_general,accept_opt,reject_opt,pos_stake,pos_custom,pos_env,pos_gov,neg_stake,neg_custom,neg_env,neg_gov,pos_dev_wf,pos_dev_mgmt,pos_dev_quality,neg_dev_wf,neg_dev_mgmt,neg_dev_quality,pos_sale_wf,pos_sale_mgmt,pos_sale_nocu,neg_sale_wf,neg_sale_mgmt,neg_sale_nocu,pos_law_wf,pos_law_wf,pos_law_tho,neg_law_wf,neg_law_mgmt,neg_law_tho,pos_succ,neg_succ
+Id,department,task,is_general,accept_opt,reject_opt,pos_stake,pos_custom,pos_env,pos_gov,neg_stake,neg_custom,neg_env,neg_gov,pos_dev_wf,pos_dev_mgmt,pos_dev_quality,neg_dev_wf,neg_dev_mgmt,neg_dev_quality,pos_sale_wf,pos_sale_mgmt,pos_sale_nocu,neg_sale_wf,neg_sale_mgmt,neg_sale_nocu,pos_law_wf,pos_law_mgm,pos_law_tho,neg_law_wf,neg_law_mgmt,neg_law_tho,pos_succ,neg_succ
 1,SW/HW,Pair programming,TRUE,Do pair programming,Keep developers apart,-1,1,0,0,1,-1,0,0,1,0,1,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,"{2:50, 4:50}",
-2,SW/HW,pp: hygiene problems,FALSE,,,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,,,,,,,
-3,SW/HW,pp: mandatory showers,FALSE,,,1,0,1,0,-1,0,0,0,-1,1,0,1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,,
-4,SW/HW,pp: murderous contempt for coworkers,FALSE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2,SW/HW,pp: hygiene problems,FALSE,Yes,No,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,
+3,SW/HW,pp: mandatory showers,FALSE,Yes,No,1,0,1,0,-1,0,0,0,-1,1,0,1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,,
+4,SW/HW,pp: murderous contempt for coworkers,FALSE,Yes,No,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,
 5,SW/HW,Bug tracking,TRUE,Add bug tracking,just fix the most obvious bugs,0,1,0,0,1,-1,0,0,1,-1,1,-1,1,-1,0,0,0,0,0,0,0,0,0,0,0,0,,
 6,SW/HW,switch to yet another another js framework,TRUE,rust.js is the way to go,keep using plain java script,1,-1,0,0,0,0,0,0,1,1,-1,-1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,,
 7,SW/HW,add copy protection,TRUE,Add rootkit protection for your app,Ship completely DRM free,1,-1,0,1,-1,0,0,-1,-1,1,-1,0,-1,0,0,0,-1,0,0,1,0,1,1,0,-1,0,,
