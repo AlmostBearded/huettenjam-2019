@@ -12,7 +12,7 @@
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=2]
 use_filter = true
 font_data = ExtResource( 2 )
 
@@ -52,7 +52,7 @@ script = ExtResource( 1 )
 margin_top = 80.0
 margin_right = 60.0
 margin_bottom = 131.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 2 )
 text = "Employees"
 align = 1
 autowrap = true
@@ -72,5 +72,4 @@ percent_visible = false
 position = Vector2( 30, 10 )
 frames = SubResource( 5 )
 animation = "arrowUp"
-frame = 2
 playing = true
