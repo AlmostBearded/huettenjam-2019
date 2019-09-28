@@ -72,7 +72,7 @@ func get_input():
 			choice = NEUTRAL
 			reset_indicators_ui()
 		else:
-			text.text = str(curr_card.id) + ". " + curr_card.task
+			text.text = "DILEMMA. " + curr_card.task
 			choice = NEUTRAL	
 			reset_indicators_ui()
 			
