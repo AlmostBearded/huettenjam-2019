@@ -33,6 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="huettenjam"
+run/main_scene="res://StartScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -46,6 +47,8 @@ settings/stdout/print_fps=true
 
 [display]
 
+window/size/width=960
+window/size/height=540
 window/stretch/mode="viewport"
 
 [input]

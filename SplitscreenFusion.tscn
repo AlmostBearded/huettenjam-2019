@@ -42,6 +42,7 @@ margin_left = 32.0
 margin_top = 28.0
 margin_right = 352.0
 margin_bottom = 568.0
+department = "SW/HW"
 
 [node name="container2" type="ViewportContainer" parent="viewports"]
 margin_left = 321.0
@@ -56,7 +57,7 @@ margin_top = 28.0
 margin_right = 350.0
 margin_bottom = 568.0
 id = 2
-department = "b"
+department = "Sales"
 
 [node name="container3" type="ViewportContainer" parent="viewports"]
 margin_left = 642.0
@@ -72,7 +73,7 @@ margin_top = 28.0
 margin_right = 30.0
 margin_bottom = 568.0
 id = 3
-department = "c"
+department = "Law"
 
 [node name="Camera2D" type="Camera2D" parent="viewports"]
 position = Vector2( 511.136, 297.224 )

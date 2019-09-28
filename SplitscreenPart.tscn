@@ -1,17 +1,23 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/department_instance.gd" type="Script" id=1]
-[ext_resource path="res://Decision.tscn" type="PackedScene" id=2]
-[ext_resource path="res://StatusProgressBar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://images/background.png" type="Texture" id=2]
+[ext_resource path="res://images/background_red.png" type="Texture" id=3]
+[ext_resource path="res://Decision.tscn" type="PackedScene" id=4]
+[ext_resource path="res://StatusPanel.tscn" type="PackedScene" id=5]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 1, 1, 1, 1 )
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 1, 1, 1, 1 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 1, 1, 1, 1 )
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "background",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "red_background",
+"speed": 5.0
+} ]
 
 [node name="Splitscreen" type="Panel" groups=[
 "DepartmentNode",
@@ -20,42 +26,11 @@ margin_right = 320.0
 margin_bottom = 540.0
 script = ExtResource( 1 )
 
-[node name="ViewportContainer" parent="." instance=ExtResource( 2 )]
-margin_left = 0.0290527
-margin_right = 320.029
-margin_bottom = 540.0
+[node name="background" type="AnimatedSprite" parent="."]
+position = Vector2( 160, 270 )
+frames = SubResource( 1 )
+animation = "background"
 
-[node name="Status" parent="." instance=ExtResource( 3 )]
-margin_left = 40.0
-margin_top = 435.0
-margin_right = 100.0
-margin_bottom = 530.0
+[node name="ViewportContainer" parent="." instance=ExtResource( 4 )]
 
-[node name="Status2" parent="." instance=ExtResource( 3 )]
-margin_left = 130.0
-margin_top = 435.0
-margin_right = 190.0
-margin_bottom = 530.0
-
-[node name="Status3" parent="." instance=ExtResource( 3 )]
-margin_left = 220.0
-margin_top = 435.0
-margin_right = 280.0
-margin_bottom = 530.0
-
-[node name="Panel" type="Panel" parent="."]
-margin_top = 420.0
-margin_right = 320.0
-margin_bottom = 430.0
-custom_styles/panel = SubResource( 1 )
-
-[node name="Panel2" type="Panel" parent="."]
-margin_left = 315.0
-margin_right = 320.0
-margin_bottom = 540.0
-custom_styles/panel = SubResource( 2 )
-
-[node name="Panel3" type="Panel" parent="."]
-margin_right = 5.0
-margin_bottom = 540.0
-custom_styles/panel = SubResource( 3 )
+[node name="StatusPanel" parent="." instance=ExtResource( 5 )]
