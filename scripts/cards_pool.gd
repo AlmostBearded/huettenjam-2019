@@ -14,7 +14,6 @@ var neg_indexes = [4,5,6,7,11,12,13,17,18,19,23,24,25]
 func load_csv():
 	var file = File.new()
 	file.open("res://data/story_data.csv", file.READ)
-	file.get_csv_line ()
 	var header = file.get_csv_line ()
 	var stats = []
 	for i in range(index_offset, index_offset+n_all_stats):
